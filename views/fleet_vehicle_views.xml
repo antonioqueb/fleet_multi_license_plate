@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="fleet_vehicle_view_form_multi_plate" model="ir.ui.view">
+        <field name="name">fleet.vehicle.form.multi.plate</field>
+        <field name="model">fleet.vehicle</field>
+        <field name="inherit_id" ref="fleet.fleet_vehicle_view_form"/>
+        <field name="arch" type="xml">
+            <!-- Renombrar el label de la matrícula original -->
+            <field name="license_plate" position="before">
+                <label for="license_plate" string="Matrícula 1"/>
+            </field>
+            <field name="license_plate" position="attributes">
+                <attribute name="nolabel">1</attribute>
+            </field>
+
+            <!-- Agregar matrículas 2 y 3 después de la primera -->
+            <field name="license_plate" position="after">
+                <label for="license_plate_2" string="Matrícula 2"/>
+                <field name="license_plate_2" nolabel="1"/>
+                <label for="license_plate_3" string="Matrícula 3"/>
+                <field name="license_plate_3" nolabel="1"/>
+            </field>
+        </field>
+    </record>
+
+    <!-- Vista lista: agregar columnas de matrículas adicionales -->
+    <record id="fleet_vehicle_view_list_multi_plate" model="ir.ui.view">
+        <field name="name">fleet.vehicle.list.multi.plate</field>
+        <field name="model">fleet.vehicle</field>
+        <field name="inherit_id" ref="fleet.fleet_vehicle_view_tree"/>
+        <field name="arch" type="xml">
+            <field name="license_plate" position="after">
+                <field name="license_plate_2" optional="hide"/>
+                <field name="license_plate_3" optional="hide"/>
+            </field>
+        </field>
+    </record>
+</odoo>
