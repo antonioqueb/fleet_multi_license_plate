@@ -7,6 +7,8 @@ class FleetVehicle(models.Model):
 
     license_plate_2 = fields.Char(string='Matrícula 2')
     license_plate_3 = fields.Char(string='Matrícula 3')
+    numero_economico = fields.Char(string='Número Económico')
+
 
     @api.constrains('license_plate', 'license_plate_2', 'license_plate_3')
     def _check_unique_license_plates(self):

@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-
-    <!-- Vista formulario: agrupar las tres matrículas -->
+    <!-- Vista formulario: matrículas y número económico -->
     <record id="fleet_vehicle_view_form_multi_plate" model="ir.ui.view">
         <field name="name">fleet.vehicle.form.multi.plate</field>
         <field name="model">fleet.vehicle</field>
@@ -11,24 +10,29 @@
                 <field name="license_plate" string="Matrícula 1" required="1"/>
                 <field name="license_plate_2" string="Matrícula 2"/>
                 <field name="license_plate_3" string="Matrícula 3"/>
+                <field name="numero_economico" string="Número Económico"/>
             </field>
         </field>
     </record>
 
-    <!-- Vista lista: columnas opcionales para matrículas 2 y 3 -->
+    <!-- Vista lista: columnas opcionales -->
     <record id="fleet_vehicle_view_list_multi_plate" model="ir.ui.view">
         <field name="name">fleet.vehicle.list.multi.plate</field>
         <field name="model">fleet.vehicle</field>
         <field name="inherit_id" ref="fleet.fleet_vehicle_view_tree"/>
         <field name="arch" type="xml">
+            <field name="license_plate" position="attributes">
+                <attribute name="string">Matrícula 1</attribute>
+            </field>
             <field name="license_plate" position="after">
                 <field name="license_plate_2" string="Matrícula 2" optional="hide"/>
                 <field name="license_plate_3" string="Matrícula 3" optional="hide"/>
+                <field name="numero_economico" string="Número Económico" optional="show"/>
             </field>
         </field>
     </record>
 
-    <!-- Filtrar conductores en el formulario de flota -->
+    <!-- Filtrar conductores -->
     <record id="fleet_vehicle_view_form_driver_filter" model="ir.ui.view">
         <field name="name">fleet.vehicle.form.driver.filter</field>
         <field name="model">fleet.vehicle</field>
@@ -42,5 +46,4 @@
             </field>
         </field>
     </record>
-
 </odoo>
