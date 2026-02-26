@@ -28,4 +28,16 @@
         </field>
     </record>
 
+    <!-- Filtrar conductores en el formulario de flota -->
+    <record id="fleet_vehicle_view_form_driver_filter" model="ir.ui.view">
+        <field name="name">fleet.vehicle.form.driver.filter</field>
+        <field name="model">fleet.vehicle</field>
+        <field name="inherit_id" ref="fleet.fleet_vehicle_view_form"/>
+        <field name="arch" type="xml">
+            <field name="driver_id" position="attributes">
+                <attribute name="domain">[('is_driver', '=', True)]</attribute>
+            </field>
+        </field>
+    </record>
+
 </odoo>
