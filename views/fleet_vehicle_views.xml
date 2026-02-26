@@ -37,6 +37,9 @@
             <field name="driver_id" position="attributes">
                 <attribute name="domain">[('is_driver', '=', True)]</attribute>
             </field>
+            <field name="future_driver_id" position="attributes">
+                <attribute name="domain">[('is_driver', '=', True)]</attribute>
+            </field>
         </field>
     </record>
 
