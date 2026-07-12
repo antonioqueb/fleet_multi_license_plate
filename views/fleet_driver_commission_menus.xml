@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <menuitem id="menu_fleet_driver_commission_root"
+              name="Comisiones de Choferes"
+              sequence="70"/>
+
+    <menuitem id="menu_fleet_driver_commission_report"
+              name="Reporte de Servicios por Chofer"
+              parent="menu_fleet_driver_commission_root"
+              action="action_service_order_driver_commission_report"
+              sequence="10"/>
+
+    <menuitem id="menu_fleet_driver_commission_config"
+              name="Configuración de Comisiones"
+              parent="menu_fleet_driver_commission_root"
+              action="action_fleet_driver_commission"
+              sequence="20"/>
+</odoo>

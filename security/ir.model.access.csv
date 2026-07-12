@@ -1,0 +1,3 @@
+id,name,model_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_fleet_driver_commission,access_fleet_driver_commission,model_fleet_driver_commission,1,1,1,1
+access_fleet_safety_equipment,access_fleet_safety_equipment,model_fleet_safety_equipment,1,1,1,1
